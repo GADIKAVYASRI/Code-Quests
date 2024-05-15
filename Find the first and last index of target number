@@ -1,0 +1,34 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("enter n");
+        int n=sc.nextInt();
+        int a[]=new int[n];
+        int min=0;
+        int max=0;
+        System.out.println("enter the values:");
+        for(int i=0;i<n;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        System.out.println("enter t:");
+        int t=sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            if(a[i] == t)
+            {
+                    min=i;
+                    break;
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(a[i] == t)
+            {
+                    max=i;
+            }
+        }
+        System.out.println(min+" "+max);
+    }
+}
