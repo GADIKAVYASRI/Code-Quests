@@ -1,0 +1,34 @@
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data=data;
+        this.next=null:
+    }
+}
+class LinkedList{
+    Node head;
+    public void pushatb(int new_data){
+        Node new_node=new Node(new_data);
+        new_node.next=head;
+        head=new_node;
+    }
+    public void push(int prev_node,int new_data){
+        Node nnode=new Node(new_data);
+        nnode.next=prev_node.next;
+        prev_node.next=nnode;
+    }public void pushate(int new_data){
+        Node enode=new Node(new_data);
+        if (head == null) {
+            head = new Node(new_data);
+            return;
+        }
+        enode.next=null;
+        Node last = head;
+        while (last.next != null)
+            last = last.next;
+        last.next = enode;
+    return;
+    }
+}
