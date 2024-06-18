@@ -1,0 +1,41 @@
+import java.util.Scanner;
+class Node {
+    int data;
+    Node next;
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+class LinkedList {
+    Node head; 
+    public void push(int new_data) {
+        Node new_node = new Node(new_data);
+        new_node.next = head;
+        head = new_node;
+    }
+    public void printList() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number of elements: ");
+        int n = scanner.nextInt();
+        LinkedList list = new LinkedList();
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            int value = scanner.nextInt();
+            list.push(value);
+        }
+        System.out.print("Linked List elements: ");
+        list.printList();
+        scanner.close();
+    }
+}
