@@ -1,0 +1,65 @@
+import java.util.*;
+class HelloWorld {
+    public static int fact(int n){
+        int f;
+        if(n==0  || n==1){
+            return 1;
+        }
+        else{
+            return n*fact(n-1);
+        }
+    }
+    public static void  palindrome(int n){
+        int sum=0;
+        int temp=n;
+        int rem=0;
+        while(n>0){
+            rem=n % 10;
+            sum=(sum*10)+rem;
+            n=n/10;
+        }
+        if(sum == temp){
+            System.out.println("Palindrome");
+        }
+        else{
+            System.out.println("Not a Palindrome");
+        }
+    }
+    public static void fib(int n){
+        int fib0= 0;
+        int fib1= 1;
+        int fibn;
+        if(n==1){
+            System.out.println("0");
+        }
+        else if(n==2){
+            System.out.println("0 1");
+        }
+        else if(n>2){
+            System.out.println("0");
+            System.out.println("1");
+            for(int i=2;i<n ;i++){
+                fibn=fib0+fib1;
+                System.out.println(fibn);
+                fib1=fibn;
+                fib0=fib1;
+            }  
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter number");
+        int n=sc.nextInt();
+        System.out.println("Enter choice");
+        int ch=sc.nextInt();
+        switch (ch){
+            case 1: System.out.println(fact(n));
+                    break;
+            case 2: palindrome(n);
+                    break;
+            case 3:fib(n);
+                    break;
+            
+        }
+    }
+}
