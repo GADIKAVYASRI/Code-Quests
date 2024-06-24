@@ -4,11 +4,9 @@ class HelloWorld {
         Scanner sc=new Scanner(System.in);
         int r=sc.nextInt();
         int c=sc.nextInt();
-        for(int i=1;i<=c;i++){
-            
-            for(int j=i;j<=r;j++){
-                
-                    System.out.print("* ");
+        for(int i=c;i>0;i--){
+            for(int j=0;j<i;j++){
+                System.out.print("* ");
                 }
             System.out.println(" ");
         }
