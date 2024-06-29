@@ -1,0 +1,18 @@
+import java.io.*; 
+import java.util.*; // contains Collections framework
+class Main {
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int x=sc.nextInt();
+        int count=0;
+        if(n%6 == 0){
+            count=n/6;
+        }
+        else
+        {
+            count=(n/6)+1;
+        }
+        System.out.println(count*x);
+    }
+}
