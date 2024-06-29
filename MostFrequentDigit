@@ -1,0 +1,46 @@
+import java.util.*;
+import java.io.*;
+class MostFrequentDigit{
+        public static void main(String[] args){
+            Scanner sc=new Scanner(System.in);
+            int input1=sc.nextInt();
+            int input2=sc.nextInt();
+            int input3=sc.nextInt();
+            int input4=sc.nextInt();
+            String s1=String.valueOf(input1);
+            String s2=String.valueOf(input2);
+            String s3=String.valueOf(input3);
+            String s4=String.valueOf(input4);
+            String s=s1+s2+s3+s4;
+            char ch[]=s.toCharArray();
+            Map<Character,Integer> map=new HashMap<Character,Integer>();
+            for(int i=0;i<ch.length;i++){
+                if(map.containsKey(ch[i])){
+                    int count=map.get(ch[i]);
+                    count+=1;
+                    map.put(ch[i],count);
+                }
+                else{
+                     map.put(ch[i],1);
+                }
+            }
+            int val=0;
+            char mkey='0';
+            int max=(int)mkey;
+            for(Map.Entry<Character,Integer> m : map.entrySet()){
+                char key=m.getKey();
+                int value=m.getValue();
+                int ke=(int)key;
+                if(value>val){
+                    val=value;
+                    mkey=key;
+                }else if(value == val){
+                    if(ke>max){
+                     mkey=key;
+                     }
+                 }
+        }
+        int res=Character.getNumericValue(mkey);
+        System.out.println(res);    
+	}
+}
