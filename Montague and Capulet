@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+public class Solution {
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        s=s.toLowerCase();
+        char str[]=s.toCharArray();
+        Set<Character> set=new HashSet<>();
+        for(int i=0;i<str.length;i++){
+            if(Character.isAlphabetic(str[i])){
+                set.add(str[i]);
+            }
+        }
+        if(set.size() == 26){
+              System.out.println("France");
+        }
+        else{
+            System.out.println("Italy");
+        }
+    }
+}
