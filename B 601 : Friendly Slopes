@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        float xa=sc.nextInt();
+        float ya=sc.nextInt();
+        float xb=sc.nextInt();
+        float yb=sc.nextInt();
+        float xc=sc.nextInt();
+        float yc=sc.nextInt();
+        float xd=sc.nextInt();
+        float yd=sc.nextInt();
+        float s1=((yb-ya)/(xb-xa));
+        float s2=((yd-yc)/(xd-xc));
+        if(s1 == s2){
+            System.out.println("yes");
+        }
+        else{
+            System.out.println("no");
+        }
+    }
+}
