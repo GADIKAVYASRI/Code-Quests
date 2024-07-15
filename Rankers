@@ -1,0 +1,42 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+class Main {
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        int p=sc.nextInt();
+        int q=sc.nextInt();
+        int r=sc.nextInt();
+        if((a+b+c)>(p+q+r)){
+            System.out.println("Ram");
+        }
+        else if((a+b+c)<(p+q+r)){
+            System.out.println("Shyam");
+        }
+        else if((a+b+c) == (p+q+r)){
+            if(a>p){
+                System.out.println("Ram");
+            }
+            else if(p>a){
+                System.out.println("Shyam");
+            }
+            else if(b>q){
+                System.out.println("Ram");
+            }
+            else if(q>b){
+                System.out.println("Shyam");
+            }
+            else if(r>c){
+                System.out.println("Ram");
+            }
+             else if(r<c){
+                System.out.println("Shyam");
+            }
+            else{
+                System.out.println("Tie");
+            }
+        }
+    }
+}
