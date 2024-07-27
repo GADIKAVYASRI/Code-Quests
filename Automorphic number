@@ -1,0 +1,22 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        int s=25;
+        int sum=(int)Math.pow(s,2);
+        int temp1=sum;
+        int count=0;
+        while(sum>0){
+    
+            sum=sum/10;
+            count++;
+        }
+        int d=(int)Math.pow(10,count-1);
+        if(temp1%d==s){
+            System.out.print("Yes");
+        }
+        else{
+             System.out.print("No");
+        }
+                
+    }
+}
