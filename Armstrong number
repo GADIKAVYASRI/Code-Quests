@@ -1,0 +1,14 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        int s=153;
+        int temp=s;
+        int sum=0;
+        while(s>0){
+            int rem=s%10;
+            sum+=(Math.pow(rem,3));
+            s=s/10;
+        }
+        System.out.print(sum);
+    }
+}
