@@ -1,0 +1,33 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        for(int i=0;i<t;i++){
+            int a=sc.nextInt();
+            int b=sc.nextInt();
+            int c=sc.nextInt();
+            int count=0;
+            int sum=0;
+            int temp=a;
+            while(a>0){
+                
+                if(temp == a){
+                    sum+=c;
+                    a=a-c;
+                    count++;
+                }
+                else{
+                    sum+=b;
+                    a=a-b;
+                    count++;
+                }
+              
+            }
+            System.out.println(count);
+        }
+    }
+}
