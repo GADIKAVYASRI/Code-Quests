@@ -1,0 +1,71 @@
+/*
+The most popular feature on snapchat is Snapchat Streak. A streak is maintained between two people if both of them send at least one snap to each other daily.
+If, on any day, either person forgets to send at least one snap, the streak breaks and the streak count is set to 0. Raj and Rita like maintaining their snapchat streak. You observed the snap count of both of them for N consecutive days. On the ith day, Raj sent Ai snaps to Rita while Rita sent Bi​ snaps to Raj.
+Find the maximum streak count they achieved in those N days.
+
+Input
+The first line of input will contain a single integer T, denoting the number of test cases.
+Each test case consists of multiple lines of input.
+The first line of each test case contains an integer N - the number of days you observed.
+The second lines contains N space-separated integers - A1, A2..., AN the number of snaps Raj sent to Rita on the ith day.
+The third lines contains N space-separated integers - B1, B2..., BN, the number of snaps Rita sent to Raj on the ith day.
+
+Constraints
+1 ≤ T ≤ 100
+1 ≤ N ≤ 1000
+0 ≤ Ai, Bi ≤ 100
+Output
+For each test case, output on a new line, the maximum streak count they achieved in those N days.
+Example
+Sample Input
+2
+3
+3 1 2
+2 4 1
+2
+0 0
+10 10
+Sample Output
+3
+0
+Explanation
+Test case 1:  For all 3 days, both Raj and Rita sent at least one snap per day. Thus, at the end of third day, the streak count is 3.
+Test case 2: Raj did not send any snap to Rita. Thus, at the streak count remains 0 on both days.
+*/
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        
+        for(int i=0;i<t;i++){
+            int count=0;
+            int max=0;
+            int N=sc.nextInt();
+            int a[]=new int[N];
+            int b[]=new int[N];
+            for(int j=0;j<N;j++){
+                a[j]=sc.nextInt();
+            }
+            for(int j=0;j<N;j++){
+                b[j]=sc.nextInt();
+            }
+            for(int j=0;j<N;j++){
+                if(a[j] <=0 || b[j]<=0){
+                    if(count>max){
+                    max=count;
+                    }
+                    count=0;
+                    continue;
+                }
+                else{
+                    count ++;
+                }
+            }
+            System.out.println((max>count)?max:count);
+        }
+    }
+}
